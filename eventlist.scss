@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+$background-color: #254441;
+$nav-color: #fef9ef;
+$yellow-color: #ffcb77;
+$yellow-color-hover: #ffdda7;
+$green-color: #17c3b2;
+$beige: #fef9ef;
+
+* body {
+  margin: 0;
+}
+
+.grid-container {
+  background-color: $background-color;
+  display: grid;
+  grid-template-rows: 200px 150px 8fr 1000px;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "nav nav nav"
+    "left filter right"
+    "left box right"
+    "footer footer footer";
+
+  #admin_btn {
+    grid-area: left;
+    place-self: start;
+    font-family: Fjalla One;
+    background-color: #fef9ef;
+    border: 0.5px solid rgb(0, 0, 0);
+
+    &:hover {
+      background-color: $yellow-color-hover;
+    }
+  }
+
+  nav {
+    grid-area: nav; // namnet på dom grid-cellerna som elementet ska finnas på
+    display: grid;
+    grid-template-columns: 2fr 7fr 3fr;
+    grid-template-areas: "logo-column space button-column";
+    background-color: $beige;
+
+    .logo {
+      grid-area: logo-column;
+      max-height: 100px;
+      padding: 30px;
+    }
+
+    .nav-buttons-wrapper {
+      grid-area: button-column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-columns: "left right";
+
+      .nav-button {
+        color: white;
+        place-self: center;
+        background-color: transparent;
+        border: none;
+        font-family: "Pacifico", cursive;
+        color: black;
+        font-size: 30px;
+      }
+    }
+
+    a:link {
+      color: black;
+      text-decoration: none;
+    }
+
+    a {
+      place-self: center;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+    }
+
+    a::after {
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: black;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+
+    a:hover::after {
+      bottom: -4px;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .filter {
+    display: flex;
+    grid-area: filter;
+    padding: 1rem;
+    justify-content: flex-end;
+
+    .filter_sort_btns {
+      max-height: 20px;
+    }
+
+    div {
+      padding: 0.3rem;
+      margin-top: 4rem;
+      margin-right: 1rem;
+      background-color: $yellow-color;
+      border: 3px solid black;
+
+      button {
+        background-color: $yellow-color;
+        border: none;
+      }
+
+      select {
+        background-color: $yellow-color;
+        border: none;
+      }
+    }
+  }
+
+  main {
+    grid-area: box;
+    //border: 1px solid black;
+    font-family: Fjalla One;
+
+    .hidden {
+      display: none;
+    }
+
+    #event-list {
+      width: 100%;
+      border-collapse: collapse;
+
+      .event-item {
+        // styling för varje eventobjekt
+        background-color: $yellow-color;
+        text-align: center;
+        border: 3px solid black;
+
+        td {
+          padding: 1.5rem;
+
+          button {
+            background-color: $green-color;
+            border: 2px solid black;
+            padding: 0.3rem;
+            box-shadow: 2px 2px black;
+          }
+
+          .delete_btn {
+            background-color: red;
+          }
+
+          .edit_btn {
+            background-color: green;
+          }
+        }
+      }
+
+      .cancelled {
+        color: #cf2a27;
+      }
+    }
+  }
+
+
+
+
+
+}

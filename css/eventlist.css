@@ -1,0 +1,95 @@
+.grid-container {
+  background-color: #254441;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 1fr 8fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "nav nav nav" "left filter right" "left box right";
+}
+
+.grid-container nav {
+  grid-area: nav;
+  display: grid;
+  grid-template-columns: 2fr 7fr 3fr;
+  grid-template-areas: "logo-column space button-column";
+  background-color: #fef9ef;
+}
+
+.grid-container nav .logo {
+  grid-area: logo-column;
+  max-height: 100px;
+  padding: 30px;
+}
+
+.grid-container nav .nav-buttons-wrapper {
+  grid-area: button-column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: "left right";
+}
+
+.grid-container nav .nav-buttons-wrapper .nav-button {
+  color: white;
+  place-self: center;
+  background-color: transparent;
+  border: none;
+  font-family: 'Pacifico', cursive;
+  color: black;
+  font-size: 30px;
+}
+
+.grid-container .filter {
+  display: flex;
+  grid-area: filter;
+  padding: 1rem;
+  justify-content: flex-end;
+}
+
+.grid-container .filter > div {
+  padding: 0.3rem;
+  margin-top: 4rem;
+  margin-right: 1rem;
+  background-color: #ffcb77;
+  border: 3px solid black;
+}
+
+.grid-container .filter > div button {
+  background-color: #ffcb77;
+  border: none;
+}
+
+.grid-container .filter > div select {
+  background-color: #ffcb77;
+  border: none;
+}
+
+main {
+  grid-area: box;
+  font-family: Fjalla One;
+}
+
+main #event-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+main .event-item {
+  background-color: #ffcb77;
+  text-align: center;
+  border: 3px solid black;
+}
+
+main .event-item td {
+  padding: 1.5rem;
+}
+
+main .event-item td button {
+  background-color: #17c3b2;
+  border: 2px solid black;
+  padding: 0.3rem;
+  box-shadow: 2px 2px black;
+}
+
+.cancelled {
+  color: #cf2a27;
+}

@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fjalla One&display=swap");
+* {
+  font-family: "Fjalla one";
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+nav {
+  grid-area: nav;
+  display: grid;
+  grid-template-columns: 2fr 7fr 3fr;
+  grid-template-areas: "logo-column space button-column";
+  background-color: #fef9ef;
+}
+
+nav .logo {
+  grid-area: logo-column;
+  max-height: 100px;
+  padding: 30px;
+}
+
+nav .nav-buttons-wrapper {
+  grid-area: button-column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: "left right";
+}
+
+nav .nav-buttons-wrapper .nav-button {
+  color: white;
+  place-self: center;
+  background-color: transparent;
+  border: none;
+  font-family: "Pacifico", cursive;
+  color: black;
+  font-size: 30px;
+}
+
+nav a:link {
+  color: black;
+  text-decoration: none;
+}
+
+nav a {
+  place-self: center;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+nav a::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  bottom: -4px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.container {
+  height: 88vh;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  width: 40vh;
+  min-height: 400px;
+  min-width: 400px;
+  background: #ffffff;
+  box-shadow: 0 6px 40px 0 black;
+  border-radius: 10px;
+  position: relative;
+}
+
+.form h1 {
+  margin-bottom: 1em;
+}
+
+.form input {
+  width: 80%;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border: 1px solid #ccc;
+}
+
+.login-button::after {
+  content: "Wrong username or password!";
+  position: absolute;
+  font-size: 0.7em;
+  width: 60%;
+  padding: 10px;
+  color: red;
+  bottom: 20px;
+  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f4f4f4;
+}
+
+footer {
+  margin-top: auto;
+}

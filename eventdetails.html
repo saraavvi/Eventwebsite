@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+    <link rel="stylesheet" href="eventdetails.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <nav>
+            <a href="index.html">
+                <img src="jpeg/ACME-LOGO.png" alt="logo" class="logo">
+            </a>
+
+            <div class="nav-buttons-wrapper">
+                <a href="aboutus.html" class="nav-button">About</a>
+                <a href="eventlist.html" class="nav-button">Events</a>
+            </div>
+        </nav>
+
+        <main class="main-section">
+
+
+            <div class="event-image">
+                <a>
+                    <img id="event-image" src="jpeg/blake.jpg" alt="event image">
+                </a>
+            </div>
+
+            <div class="event-short-info">
+                <div class="event-short-info-span">
+                    <span id="event-date">July 7</span>
+                    <span id="event-time">20:00</span>
+                    <span id="event-location">L'Olympia</span>
+                </div>
+                <button id="book-here-button"><span>Tickets</span></button>
+            </div>
+
+
+            <div class="message-us">
+                <input id="message-input" type="text" placeholder="How hyped are you?">
+                <button id="submit-message">Submit</button>
+                <div id="print-message"></div>
+            </div>
+
+            <div class="about-event">
+
+                <div class="event-name">
+                    <h2 id="event-name-header">James Blake</h2>
+                    <span id="event-name-span">James Blake has risen to become one of the most important musicians,
+                        producers and songwriters in the world. In the last couple of years alone, the
+                        Mercury-Prize-winner and Brit and Grammy Award nominee has worked with Kendrick Lamar, Beyoncé,
+                        Jay Z, Mount Kimbie, Bon Iver, Chance The Rapper & Frank Ocean; not to mention collaborating on
+                        arts’ projects with Quentin Blake, Natalie Portman or The Black Panther soundtrack. A truly
+                        global presence, in the UK James has headlined the likes of London’s Field Day, Green Man,
+                        Glastonbury and has also confirmed an appearance at this summer’s Primavera Sound
+                        Festival.</span>
+                </div>
+
+                <div class="event-info">
+                    <h2 id="event-info-header">Event Info</h2>
+                    <span id="event-info-span">
+                        Please note that there may be additional measures in place to ensure the safety of staff and
+                        guests in relation to COVID-19 which may vary according to health and safety and government
+                        advice at the time of the Event (and your breach of any of these may lead to you being refused
+                        Entry and/or ejected from the Event).
+                    </span>
+
+                    <div class="venue-info">
+
+                        <h2 id="event-venue-header">Venue Info</h2>
+                        <span id="event-venue-span">
+                            L'Olympia <br>
+                            28 Boulevard des Capucines <br>
+                            75009 <br>
+                            Paris, France <br>
+                            0892683368 <br> <br>
+                            Venue Capacity: 1,996
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+    <script src="eventlist.js"></script>
+    <script src="eventdetails.js"></script>
+</body>
+
+</html>

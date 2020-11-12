@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fjalla One&display=swap");
+
+* {
+  font-family: "Fjalla one";
+}
+
+//color-profiles
+$green: #254441;
+$blue: #227c9d;
+$turqiose: #17c3b2;
+$yellow: #ffcb77;
+$beige: #fef9ef;
+$pink: #fe6d73;
+
+$event-column-row-gap: 70px;
+
+body {
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 0.2fr 4fr; // rad 1 , rad 2
+  grid-template-columns: 1fr;
+
+  grid-template-areas: "nav-columns" //rad 1
+    "main-columns"; //rad 2
+
+  nav {
+    grid-area: nav-columns; // namnet på dom grid-cellerna som elementet ska finnas på
+    display: grid;
+    grid-template-columns: 2fr 7fr 3fr;
+    grid-template-areas: "logo-column space button-column";
+    background-color: $beige;
+    height: 200px;
+
+
+    .logo {
+      grid-area: logo-column;
+      max-height: 100px;
+      padding: 30px;
+    }
+
+    .nav-buttons-wrapper {
+      grid-area: button-column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-columns: "left right";
+
+      .nav-button {
+        color: white;
+        place-self: center;
+        background-color: transparent;
+        border: none;
+        font-family: "Pacifico", cursive;
+        color: black;
+        font-size: 30px;
+      }
+    }
+
+    a:link {
+      color: black;
+      text-decoration: none;
+    }
+
+    a {
+      place-self: center;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+    }
+
+    a::after {
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: black;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+
+    a:hover::after {
+      bottom: -4px;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  main {
+    grid-area: main-columns;
+    background-color: $green;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 4fr 4fr;
+
+    grid-template-areas:
+      "image-column image-column image-column"
+      "left middle right";
+
+    //span across website and take upp half the
+    .event-image {
+      grid-area: image-column;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+
+      #event-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 70% 0;
+      }
+    }
+
+    //gonna be off-center
+    .event-short-info {
+      font-size: 20px;
+      text-align: center;
+      grid-area: middle;
+      display: flex;
+      justify-content: safe center;
+      align-items: flex-start;
+      margin-top: -20px;
+
+      .event-short-info-span {
+
+        padding: 10px;
+        border: black 1px solid;
+        width: 400px;
+        background-color: $yellow;
+        border: 2px solid black;
+        box-shadow: 2px 2px black;
+      }
+
+      span {
+        margin: 20px;
+      }
+
+      #book-here-button {
+
+        font-size: 20px;
+        margin-left: 5px;
+        padding: 10px;
+        background-color: $turqiose;
+        border: 2px solid black;
+        box-shadow: 2px 2px black;
+        width: 125px;
+
+        &:hover {
+          background-color: $pink;
+
+          span {
+            display: none;
+          }
+        }
+
+        &:hover:before {
+          content: "Sold out!";
+        }
+      }
+    }
+
+    .message-us {
+      grid-area: left;
+      display: inline-table;
+      align-self: center;
+
+      //flex-wrap: wrap;
+
+      margin-left: 20px; //display: inline-table;
+      //margin: 200px 30px 30px 30px;
+
+      #print-message {
+        height: 250px;
+        width: 300px;
+        border: 1px black solid;
+        background-color: $beige;
+        border: 2px solid black;
+        box-shadow: 2px 2px black;
+        padding: 10px;
+
+      }
+
+      p {
+        margin: 10px;
+
+      }
+
+      #message-input {
+        text-align: center;
+        width: 210px;
+        height: 25px;
+        background-color: $beige;
+        border: 2px solid black;
+        box-shadow: 2px 2px black;
+      }
+
+      #submit-message {
+        height: 30px;
+        width: 72px;
+        background-color: $beige;
+        border: 2px solid rgb(14, 13, 13);
+        box-shadow: 2px 2px black;
+        margin: 0px 0px 10px 10px;
+      }
+    }
+
+    .about-event {
+      overflow-y: scroll;
+      grid-area: middle;
+      display: flex;
+      flex-direction: column;
+      justify-self: center;
+      margin: 50px 0px 30px 0px;
+      width: 480px;
+      height: 480px;
+      //row-gap: $event-column-row-gap;
+      // margin: 60px 0px 20px 240px;
+      color: $beige;
+    }
+  }
+}

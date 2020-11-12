@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico" />
+    <link rel="stylesheet" href="eventlist.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event List</title>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <nav>
+            <a href="index.html">
+                <img src="jpeg/ACME-LOGO.png" alt="logo" class="logo">
+            </a>
+
+            <div class="nav-buttons-wrapper">
+                <a href="aboutus.html" class="nav-button">About</a>
+                <a href="eventlist.html" class="nav-button">Events</a>
+            </div>
+        </nav>
+        <button id="admin_btn">Admin</button>
+
+        <div class="filter">
+            <div class="filter_sort_btns">
+                <select name="category-menu" id="category">
+                    <option value="Category">Category</option>
+                    <option value="Music">Music</option>
+                    <!--vad ska vi ha för options?-->
+                    <option value="Sport">Sport</option>
+                    <option value="Stand Up">Stand Up</option>
+                </select>
+            </div>
+            <div class="filter_sort_btns">
+                <select name="date-menu" id="date">
+                    <option id="date-new">Sort by New</option>
+                    <option id="date-old">Sort by Old</option>
+                </select>
+            </div>
+        </div>
+        <main>
+            <table id="event-list">
+                <!--all events will be appended here-->
+            </table>
+
+            <!--add new event form-->
+            <form class="hidden " id="add_form">
+                <p>Add Event:</p>
+                <input placeholder="Date" id="event_date" type="date">
+                <input placeholder="Name of event" id="name" type="text">
+                <input placeholder="Location" id="location" type="text">
+                <select id="event_category">
+                    <option value="Music">Music</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Stand Up">Stand Up</option>
+                </select>
+                <select id="add_isAvaliable">
+                    <option value="Available">Available</option>
+                    <option value="Unavailable">Unavailable</option>
+                </select>
+                <button type="button" id="create_btn">Add</button>
+            </form>
+            <!--edit event form-->
+            <form class=" hidden" id="edit_form">
+                <p>Edit Event:</p>
+                <input placeholder="Date" id="edit_date" type="date">
+                <input placeholder="Name of event" id="edit_name" type="text">
+                <input placeholder="Location" id="edit_location" type="text">
+                <select id="edit_event_category">
+                    <option value="Music">Music</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Stand Up">Stand Up</option>
+                </select>
+                <select id="edit_isAvaliable">
+                    <option value="Available">Available</option>
+                    <option value="Unavailable">Unavailable</option>
+                </select>
+                <button type="button" id="save_btn">Save</button>
+            </form>
+        </main>
+    </div>
+    <script src="eventlist.js"></script>
+</body>
+
+</html>

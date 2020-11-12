@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif;
+}
+
+#crud-list {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+#crud-list input {
+  background-color: transparent;
+  border: 0px black solid;
+  height: 50px;
+  width: 160px;
+  color: black;
+  font-size: 15px;
+}
+
+.crud-item {
+  text-align: center;
+  border-bottom: 1px solid blue;
+}
+
+td {
+  padding: 1rem;
+}
+
+.delete {
+  background-color: red;
+}
+
+.edit {
+  background-color: green;
+}
+
+.save {
+  background-color: yellow;
+}
+
+#create {
+  background-color: green;
+  margin: 1rem;
+  padding: 1rem;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla One" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Home</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <!--Navbar ligger utanför grid för att kunna återanvändas nu-->
+        <nav>
+            <a href="index.html">
+                <img src="jpeg/ACME-LOGO.png" alt="logo" class="logo">
+            </a>
+
+            <div class="nav-buttons-wrapper">
+                <a href="aboutus.html" class="nav-button">About</a>
+                <a href="eventlist.html" class="nav-button">Events</a>
+                <a href="Login.html" class="nav-button">Sign in</a>
+            </div>
+        </nav>
+
+        <div id="hud-item">
+            <div>Welcome!</div>
+            <div id="UsernameInpt"></div>
+        </div>
+
+        <main class="main-section">
+            <!--<header>WE DO MUSIC EVENTS YEAH </header>-->
+
+
+            <div class="eventcolumn1">
+                <div id="box1" class="box">
+                    <a><img src="jpeg/jamesblake.jpg" alt="james blake" class="blake"></a>
+                    <div id="mask1" class="mask">
+                        <div id="caption1" class="caption">James Blake July 7</div>
+                    </div>
+                </div>
+
+                <div id="box2" class="box">
+                    <a><img src="jpeg/anthony-jeselnik.png" alt="chet baker" class="chet"></a>
+                    <div id="mask2" class="mask">
+                        <div id="caption2" class="caption">Anthony Jeselnik July 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eventcolumn2">
+                <div id="box3" class="box">
+                    <a><img src="jpeg/nina-simone.png" alt="lollapalooza" class="lolla"></a>
+                    <div id="mask3" class="mask">
+                        <div id="caption3" class="caption">Nina Simone August 13</div>
+                    </div>
+                </div>
+                <div id="box4" class="box">
+                    <a><img src="jpeg/psg.png" alt="way out west" class="way"></a>
+                    <div id="mask4" class="mask">
+                        <div id="caption4" class="caption">PSG vs Milan August 17</div>
+                    </div>
+                </div>
+            </div>
+            <footer><a href="eventlist.html" id="see-more" class="see-more">See more here!</a></footer>
+
+        </main>
+    </div>
+    <script src="Login.js"></script>
+
+</body>
+
+</html>
